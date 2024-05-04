@@ -1,15 +1,12 @@
 #include <iostream>
+#include <vector>
 using namespace std;
-
-int simpleMultiplication(int a){
-    if(a % 2 == 0 ){
-      return a * 8;
-    }else{
-      return a*9;
-    }
-}
 
 int main()
 {
-    cout<<simpleMultiplication(5);
+    vector<int> numOne={10,20,30,40};
+
+    for(int i=0;i<numOne.size();i++){
+        cout<<numOne[i]<<endl;
+    }
 }
