@@ -3,14 +3,14 @@
 #include "Car.h"
 using namespace std;
 
-//Constructor 
+int Car::count = 0;
+
 Car::Car(string m,int mod,string c):maker (m),model (mod),colors (c)
 {
+    count++;
 }
-//Destructor
 Car::~Car(){
-    cout<<"thanks to use my program"<<endl;
-    cout<<"Good Bye"<<endl;
+    count--;
 }
 
 void Car::setMaker(string m){
@@ -33,9 +33,18 @@ string Car::getColors(){
 }
 
 
+int Car::getCarsCount()
+{
+    return count;
+}
+
 int main(){
     Car c1("Toyota",2020,"Black");
-    cout<<"This car make with "<<c1.getMaker()<<endl;
-    cout<<"This car model is "<<c1.getModel()<<endl;
-    cout<<"This car color is "<<c1.getColors()<<endl;
+    cout << "counter reached: " << c1.getCarsCount() << endl; //counter reached: 1
+
+    Car c2("Toyota",2020,"Black");
+    cout << "counter reached: " << c2.getCarsCount() << endl; //counter reached: 1
+
+        Car c3("Toyota",2020,"Black");
+    cout << "counter reached: " << c3.getCarsCount() << endl; //counter reached: 1
 }

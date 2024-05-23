@@ -6,7 +6,8 @@ private:
     string maker;
     int model;
     string colors;
-        
+    static int count ; // it will be the static data
+
 public:
     void setMaker(string m);
     string getMaker();
@@ -16,4 +17,6 @@ public:
 
     Car(string m,int mod,string c);
     ~Car();
+
+    int getCarsCount();
 };
