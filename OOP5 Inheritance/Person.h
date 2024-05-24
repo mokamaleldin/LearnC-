@@ -16,7 +16,7 @@ public:
         gender = "unKnow";
         age = 0;
     }
-    Person(string n,string g,long s, float a){
+    Person(string n,string g, float a){
         name = n;
         gender = g;
         age = a;

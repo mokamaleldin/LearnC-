@@ -14,6 +14,14 @@ private :
     int sNumber;
 
 public:
+   // i import it from the person constructor
+   Student(string n,string g, float a,int l,float gg,string d,int s):Person( n, g,  a){
+      level = l;
+      gpa = gg;
+      depart = d;
+      sNumber = s;
+   }
+
     void setLevel(int l){
         level = l;
     }
@@ -32,10 +40,15 @@ public:
     string getDepart(){
         return depart ;
      }
-     void setSNumber(int n){
-        sNumber = n;
+     void setSNumber(int s){
+        sNumber = s;
      }
     int  getSNumber(){
         return sNumber;
+     }
+
+     void display(){
+        Person::display(); //import this function form Person
+        cout << "Depart: " << depart << " level: " << level << " gpa: " << gpa << " student number: " << sNumber<<endl;
      }
 };
