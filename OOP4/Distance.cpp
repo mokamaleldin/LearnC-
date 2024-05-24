@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "Distance"
+#include "Distance.h"
 using namespace std;
 
 Distance::Distance():feet(0),inches(0.0)
@@ -11,27 +11,22 @@ Distance::Distance(int f,float i):feet(f),inches(i)
 {
 }
 
-// Copy Constructor
-void Distance::setDistance(int f,float i)
-{
-}
 
 void Distance::print(){
-    cout<<"Feet= "<<feet<<" "<<"inches= "<<inches;
+    cout<<endl<<"Feet= "<<feet<<" "<<"inches= "<<inches<<endl;
 }
 
-Distance::~Distance()
-{
+Distance Distance::addDistance(Distance d2){
+    Distance result;
+    result.feet = feet + d2.feet;
+    result.inches = inches + d2.inches;
+    return result;
 }
 
 int main()
 {
-    Distance d1;
-    Distance d2(5,3.5);
-    Distance d3(d2); // The default Copy Constructor
-    d3.print();
-    d2.print();
-    d3.setDistance(7,4.25);
-    Distance d4=d3;
-    d4.print();
+    Distance d1(5,4.52);
+    Distance d2(7, 4.2);
+    Distance d3 =d1.addDistance(d2);
+    d3.print(); //Feet= 12 inches= 8.72
 }
