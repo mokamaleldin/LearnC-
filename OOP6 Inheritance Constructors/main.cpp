@@ -3,38 +3,49 @@
 #include <string>
 using namespace std;
 
-class Base
+class Employee
 {
 private:
-    int x = 0;
+    string name;
+    string job;
+    float salary;
+
 public:
-    Base(){
-        x = 0;
-        cout << "Base default constructor \n";
+    Employee(string n,string j,float s){
+        name = n;
+        job = j;
+        salary = s;
     }
 };
 
 // it is inheritance from Base
-class Derived : public Base
+class Student
 {
 private:
-    int y;
+    string department;
+    string research;
+
 public:
-    Derived(){
-        y = 0;
-        cout << "Derived default constructor \n";
-    }
-    Derived(int i){
-        y = i;
-        cout << "Derived parameterized constructor \n";
+    Student(string d,string ra){
+        department = d;
+        research = ra;
     }
 };
 
+class teachingAssistang:public Student,public Employee
+{
+private:
+
+public:
+    teachingAssistang(string n,string j,float s,string d,string ra):Employee(n,j,s),Student(d,ra)
+    {
+
+    }
+};
+
+
+
 int main()
 {
-    Base b;
-    Derived d1; //object form the base first and then enter in the Derived
-    Derived d2(5); //object form the base first and then enter in the Derived
-    // output
-    
+    teachingAssistang t1("mohamd", "TA", 5000, "Isu", "DataBasese");
 }
