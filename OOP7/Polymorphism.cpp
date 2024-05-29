@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 
+// i can't take object form the Abstract class
 class Shape
 {
 private:
@@ -12,16 +13,12 @@ public:
     Shape(string c){
         color = c;
     };
-    virtual int area(){
-        cout << "parent class area: " << endl;
-        return 0;
-    }
-    virtual void draw(){
-        cout << "Draw parent shape in " << color << " color" << endl;
-    }
-    virtual void erase()
-    {
-        cout << "Erase the parent shape " << endl;
+    // now this is a Abstract class
+    virtual int area() = 0;
+    virtual void draw() = 0;
+    virtual void erase() = 0;
+    virtual void display() final{
+        cout << "This is shape" << endl;
     }
     ~Shape(){};
 };
